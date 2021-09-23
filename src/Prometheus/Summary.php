@@ -7,7 +7,7 @@ use Prometheus\Storage\Adapter;
 
 class Summary extends Collector
 {
-    const RESERVED_LABELS = ['quantile'];
+    private $RESERVED_LABELS = ['quantile'];
     const TYPE = 'summary';
 
     /**
@@ -71,8 +71,8 @@ class Summary extends Collector
             throw new InvalidArgumentException("maxAgeSeconds $maxAgeSeconds invalid: Expected number greater than 0.");
         }
 
-        if (count(array_intersect(self::RESERVED_LABELS, $labels)) > 0) {
-            throw new InvalidArgumentException("Summary cannot have a label named " . implode(', ', self::RESERVED_LABELS) . ".");
+        if (count(array_intersect($this->RESERVED_LABELS, $labels)) > 0) {
+            throw new InvalidArgumentException("Summary cannot have a label named " . implode(', ', $this->RESERVED_LABELS) . ".");
         }
         $this->quantiles = $quantiles;
         $this->maxAgeSeconds = $maxAgeSeconds;

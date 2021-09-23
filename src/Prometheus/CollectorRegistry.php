@@ -84,7 +84,7 @@ class CollectorRegistry implements RegistryInterface
      * @return Gauge
      * @throws MetricsRegistrationException
      */
-    public function registerGauge($namespace, $name, $help, $labels = [])
+    public function registerGauge($namespace, $name, $help, array $labels = [])
     {
         $namespace = (string) $namespace;
         $name = (string) $name;
@@ -130,7 +130,7 @@ class CollectorRegistry implements RegistryInterface
      * @return Gauge
      * @throws MetricsRegistrationException
      */
-    public function getOrRegisterGauge($namespace, $name, $help, $labels = [])
+    public function getOrRegisterGauge($namespace, $name, $help, array $labels = [])
     {
         $namespace = (string) $namespace;
         $name = (string) $name;
@@ -152,7 +152,7 @@ class CollectorRegistry implements RegistryInterface
      * @return Counter
      * @throws MetricsRegistrationException
      */
-    public function registerCounter($namespace, $name, $help, $labels = [])
+    public function registerCounter($namespace, $name, $help, array $labels = [])
     {
         $namespace = (string) $namespace;
         $name = (string) $name;
@@ -198,7 +198,7 @@ class CollectorRegistry implements RegistryInterface
      * @return Counter
      * @throws MetricsRegistrationException
      */
-    public function getOrRegisterCounter($namespace, $name, $help, $labels = [])
+    public function getOrRegisterCounter($namespace, $name, $help, array $labels = [])
     {
         $namespace = (string) $namespace;
         $name = (string) $name;
